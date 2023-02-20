@@ -3,10 +3,10 @@ Marimba 2.0 2.0 (aliases: Marimba Web 2.0, The Other Marimba Web) is the second 
 # Getting Started
 Table of Contents
 - Requirements for all platforms
-- The Noob Installation Guide (if you don't know what a Python virtual environment is then you should read this)
-	- Creating a virtual environment
-	- Using Visual Studio Code
-- Using Git not like a git (work in progress)
+- [The Noob Installation Guide](#the-noob-installation-guide) (if you don't know what a Python virtual environment is then you should read this)
+	- [Creating a virtual environment](#creating-a-virtual-environment)
+	- [Using Visual Studio Code](#using-visual-studio-code)
+- [Using Git not like a git](#using-git-not-like-a-git) (work in progress)
 
 ## Requirements for all platforms
 1. [Python 3](https://www.python.org/downloads/) - minimum 3.7 since support ends June 2023
