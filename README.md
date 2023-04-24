@@ -1,5 +1,5 @@
-# Marimba 2.0 2.0
-Marimba 2.0 2.0 (aliases: Marimba Web 2.0, The Other Marimba Web) is the second attempt at revitalizing the University of Waterloo Concert Band Club's proprietary administration program. The primary frameworks used will be React and Django in an attempt to appease the CSC overlords and to make Greyson learn Python.
+# Celesta
+Celesta is the second attempt at revitalizing the University of Waterloo Concert Band Club's proprietary administration program. The primary frameworks used will be React and Django in an attempt to appease the CSC overlords and to make Greyson learn Python.
 
 ## Getting Started
 Table of Contents
