@@ -1,9 +1,9 @@
-import { Text } from '@mantine/core'
+import MemberTable from './components/MemberTable'
 
 function App() {
 	return (
 		<div className='App'>
-			<Text>Hello world!</Text>
+			<MemberTable />
 		</div>
 	)
 }
