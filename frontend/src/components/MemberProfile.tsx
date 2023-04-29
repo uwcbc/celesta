@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import {
 	Button,
 	Flex,
@@ -15,7 +15,7 @@ import { Member } from 'types'
 interface MemberProfileProps {
 	opened: boolean
 	onClose: () => void
-	member: Member | null
+	member: Member
 }
 
 const types = [
@@ -44,10 +44,6 @@ const instruments = [
 		label: 'Goanna lizard'
 	},
 	{
-		value: 'Orange',
-		label: 'Canadian tiger swallowtail butterfly'
-	},
-	{
 		value: 'Aquamarine',
 		label: 'Common wombat'
 	},
@@ -60,16 +56,8 @@ const instruments = [
 		label: 'Banded mongoose'
 	},
 	{
-		value: 'Pink',
-		label: 'Hornbill, red-billed'
-	},
-	{
 		value: 'Orange',
 		label: "Squirrel, smith's bush"
-	},
-	{
-		value: 'Indigo',
-		label: 'Flicker, campo'
 	},
 	{
 		value: 'Yellow',
@@ -86,16 +74,52 @@ const sizes = [
 ]
 
 const MemberProfile = ({ opened, onClose, member }: MemberProfileProps) => {
-	const [firstName, setFirstName] = useState<string>(member?.firstName ?? '')
-	const [type, setType] = useState<string | null>(member?.type ?? null)
+	const [firstName, setFirstName] = useState<string>('')
+	const [lastName, setLastName] = useState<string>('')
+	const [email, setEmail] = useState<string>('')
+	const [type, setType] = useState<string | null>()
+	const [mainInstrument, setMainInstrument] = useState<string | null>()
+	const [instrument, setInstrument] = useState<string[]>([]) // TODO: disable "main instrument" option in secondary instrument list
+
+	useEffect(() => {
+		setFirstName(member.firstName)
+		setLastName(member.lastName)
+		setEmail(member.email)
+		setType(member.type)
+	}, [member])
 
 	const UWStudentProfile = () => {
+		const [faculty, setFaculty] = useState<string | null>()
+		const [studentNumber, setStudentNumber] = useState<number>()
+		const [watIAM, setWatIAM] = useState<string>()
+
+		useEffect(() => {
+			setFaculty(member.faculty)
+			setStudentNumber(member.studentNumber ?? undefined)
+			setWatIAM(member.watIAM ?? undefined)
+		}, [])
 		return (
 			<>
-				<Select label='Faculty' data={faculties} withAsterisk />
+				<Select
+					label='Faculty'
+					data={faculties}
+					withAsterisk
+					value={faculty}
+					onChange={setFaculty}
+				/>
 				<Group grow>
-					<TextInput label='Student Number' withAsterisk />
-					<TextInput label='WatIAM' withAsterisk />
+					<TextInput
+						label='Student Number'
+						withAsterisk
+						value={studentNumber}
+						onChange={(e) => setStudentNumber(Number(e.target.value))}
+					/>
+					<TextInput
+						label='WatIAM'
+						withAsterisk
+						value={watIAM}
+						onChange={(e) => setWatIAM(e.target.value)}
+					/>
 				</Group>
 			</>
 		)
@@ -105,7 +129,7 @@ const MemberProfile = ({ opened, onClose, member }: MemberProfileProps) => {
 		<Modal
 			opened={opened}
 			onClose={onClose}
-			title={member && member.firstName + ' ' + member.lastName}
+			title={member.firstName + ' ' + member.lastName}
 			centered
 		>
 			<Stack spacing='xs'>
@@ -114,11 +138,21 @@ const MemberProfile = ({ opened, onClose, member }: MemberProfileProps) => {
 						label='First Name'
 						withAsterisk
 						value={firstName}
-						onChange={(e) => setFirstName(e.currentTarget.value)}
+						onChange={(e) => setFirstName(e.target.value)}
 					/>
-					<TextInput label='Last Name' withAsterisk />
+					<TextInput
+						label='Last Name'
+						withAsterisk
+						value={lastName}
+						onChange={(e) => setLastName(e.target.value)}
+					/>
 				</Group>
-				<TextInput label='Email' withAsterisk />
+				<TextInput
+					label='Email'
+					withAsterisk
+					value={email}
+					onChange={(e) => setEmail(e.target.value)}
+				/>
 				<Select
 					label='Type'
 					data={types}
@@ -129,20 +163,31 @@ const MemberProfile = ({ opened, onClose, member }: MemberProfileProps) => {
 				{(type === 'undergraduate' || type === 'graduate') && (
 					<UWStudentProfile />
 				)}
-				<MultiSelect
-					label='Instrument(s)'
+				<Select
+					label='Main Instrument'
 					data={instruments}
 					withAsterisk
 					searchable
 					creatable
 					getCreateLabel={(query) => `Add ${query}`}
 					//onCreate required
-					maxDropdownHeight={400}
+					value={mainInstrument}
+					onChange={setMainInstrument}
+				/>
+				<MultiSelect
+					label='Other Instruments'
+					data={instruments}
+					searchable
+					creatable
+					getCreateLabel={(query) => `Add ${query}`}
+					//onCreate required
+					value={instrument}
+					onChange={setInstrument}
 				/>
 				<Select label='Shirt Size' data={sizes} w='50%' />
 				<Textarea label='Other' />
 				<Flex justify='flex-end'>
-					<Button onClick={() => console.log('help', firstName)} mt={10}>
+					<Button onClick={() => console.log('inst', instrument)} mt={10}>
 						Save Changes
 					</Button>
 				</Flex>
