@@ -1,8 +1,9 @@
 import { useState } from 'react'
-import { Table, Title } from '@mantine/core'
+import { Box, Flex, Title } from '@mantine/core'
 import { useDisclosure } from '@mantine/hooks'
 import MemberProfile from './MemberProfile'
 import { Member } from 'types'
+import MemberEntry from './MemberEntry'
 
 const data = [
 	{
@@ -117,7 +118,7 @@ const data = [
 	}
 ]
 
-const MemberTable = () => { // TODO: replace basic table with horizontal cards
+const MemberTable = () => {
 	const [opened, { open, close }] = useDisclosure(false)
 	const [openMember, setOpenMember] = useState<Member | null>(null)
 
@@ -126,33 +127,19 @@ const MemberTable = () => { // TODO: replace basic table with horizontal cards
 			<Title order={3} mb={10}>
 				Members
 			</Title>
-			<Table highlightOnHover>
-				<thead>
-					<tr>
-						<th>First Name</th>
-						<th>Last Name</th>
-						<th>Type</th>
-						<th>Email</th>
-					</tr>
-				</thead>
-				<tbody>
-					{data.map((member: Member) => (
-						<tr
-							key={member.id}
-							onClick={() => {
-								open()
-								setOpenMember(member)
-								console.log('i am sending this member:', member)
-							}}
-						>
-							<td>{member.firstName}</td>
-							<td>{member.lastName}</td>
-							<td>{member.type}</td>
-							<td>{member.email}</td>
-						</tr>
-					))}
-				</tbody>
-			</Table>
+			<Flex justify='flex-start' gap='xs' wrap='wrap' direction='row'>
+				{data.map((member: Member) => (
+					<Box
+						key={member.id}
+						onClick={() => {
+							open()
+							setOpenMember(member)
+						}}
+					>
+						<MemberEntry member={member} />
+					</Box>
+				))}
+			</Flex>
 			{openMember && (
 				<MemberProfile opened={opened} onClose={close} member={openMember} />
 			)}
