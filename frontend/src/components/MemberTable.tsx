@@ -8,117 +8,121 @@ import MemberEntry from './MemberEntry'
 const data = [
 	{
 		id: '8',
-		firstName: 'Nester',
-		lastName: 'Preddle',
+		first_name: 'Nester',
+		last_name: 'Preddle',
 		email: 'npreddle0@nih.gov',
 		type: 'undergraduate',
 		studentNumber: 21783203,
 		watIAM: 'Awaradam',
 		mainInstrument: '',
-		shirtSize: 'MW'
+		shirt_size: 'MW'
 	},
 	{
 		id: '4',
-		firstName: 'Edward',
-		lastName: 'Duchenne',
+		first_name: 'Edward',
+		last_name: 'Duchenne',
 		email: 'educhenne1@marriott.com',
 		type: 'undergraduate',
 		studentNumber: 28213544,
 		watIAM: 'Bentota',
 		mainInstrument: '',
-		shirtSize: 'RQ'
+		shirt_size: 'RQ'
 	},
 	{
 		id: '263',
-		firstName: 'Cynthia',
-		lastName: 'Cornthwaite',
+		first_name: 'Cynthia',
+		last_name: 'Cornthwaite',
 		email: 'ccornthwaite2@prweb.com',
 		type: 'undergraduate',
 		studentNumber: 25405594,
 		watIAM: 'Malmö',
 		mainInstrument: '',
-		shirtSize: 'UI'
+		shirt_size: 'UI'
 	},
 	{
 		id: '21097',
-		firstName: 'Bernita',
-		lastName: 'Markwelley',
+		first_name: 'Bernita',
+		last_name: 'Markwelley',
 		email: 'bmarkwelley3@un.org',
 		type: 'undergraduate',
 		studentNumber: 27762875,
 		watIAM: 'Liangping',
 		mainInstrument: '',
-		shirtSize: 'EA'
+		shirt_size: 'EA'
 	},
 	{
 		id: '19',
-		firstName: 'Rebecca',
-		lastName: 'McNally',
+		first_name: 'Rebecca',
+		last_name: 'McNally',
 		email: 'rmcnally4@webnode.com',
 		type: 'graduate',
 		studentNumber: 25796776,
 		watIAM: 'Kekaha',
 		mainInstrument: '',
-		shirtSize: 'QE'
+		shirt_size: 'QE'
 	},
 	{
 		id: '22',
-		firstName: 'Ada',
-		lastName: 'Lafflina',
+		first_name: 'Ada',
+		last_name: 'Lafflina',
 		email: 'alafflina5@goo.ne.jp',
 		type: 'graduate',
 		studentNumber: 28382715,
 		watIAM: 'Lehu',
 		mainInstrument: '',
-		shirtSize: 'KL'
+		shirt_size: 'KL'
 	},
 	{
 		id: '29',
-		firstName: 'Maxi',
-		lastName: 'Shiel',
+		first_name: 'Maxi',
+		last_name: 'Shiel',
 		email: 'mshiel6@xinhuanet.com',
 		type: 'alumni',
 		studentNumber: 23363880,
 		watIAM: 'Ashley',
 		mainInstrument: '',
-		shirtSize: 'QE'
+		shirt_size: 'QE'
 	},
 	{
 		id: '6',
-		firstName: 'Buddie',
-		lastName: 'Jewell',
+		first_name: 'Buddie',
+		last_name: 'Jewell',
 		email: 'bjewell7@aboutads.info',
 		type: 'alumni',
 		studentNumber: 29634676,
 		watIAM: 'Georgetown',
 		mainInstrument: '',
-		shirtSize: 'CS'
+		shirt_size: 'CS'
 	},
 	{
 		id: '1',
-		firstName: 'Caroljean',
-		lastName: 'Menzies',
+		first_name: 'Caroljean',
+		last_name: 'Menzies',
 		email: 'cmenzies8@amazonaws.com',
 		type: 'other',
 		studentNumber: 23355570,
 		watIAM: 'Terapo Mission',
 		mainInstrument: '',
-		shirtSize: 'KC'
+		shirt_size: 'KC'
 	},
 	{
 		id: '203',
-		firstName: 'Callida',
-		lastName: 'Gabbot',
+		first_name: 'Callida',
+		last_name: 'Gabbot',
 		email: 'cgabbot9@ucsd.edu',
 		type: 'other',
 		studentNumber: 20895476,
 		watIAM: 'Ratanakiri',
 		mainInstrument: '',
-		shirtSize: 'HE'
+		shirt_size: 'HE'
 	}
 ]
 
-const MemberTable = () => {
+interface MemberListProps {
+	member_list : []
+}
+
+const MemberTable = ({member_list}: MemberListProps) => {
 	const [opened, { open, close }] = useDisclosure(false)
 	const [openMember, setOpenMember] = useState<Member | null>(null)
 
@@ -128,7 +132,7 @@ const MemberTable = () => {
 				Members
 			</Title>
 			<Flex justify='flex-start' gap='xs' wrap='wrap' direction='row'>
-				{data.map((member: Member) => (
+				{member_list.map((member: Member) => (
 					<Box
 						key={member.id}
 						onClick={() => {

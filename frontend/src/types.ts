@@ -1,7 +1,7 @@
 export interface Member {
   id: string
-  firstName: string
-  lastName: string
+  first_name: string
+  last_name: string
   email: string
   type: string
   faculty?: string
@@ -9,6 +9,6 @@ export interface Member {
   watIAM?: string | null
   mainInstrument: string
   otherInstruments?: string
-  shirtSize?: string
+  shirt_size?: string
   other?: string
 }

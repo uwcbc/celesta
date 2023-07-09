@@ -15,7 +15,7 @@ const MemberEntry = ({ member, image }: MemberEntryProps) => {
 			</Box>
 			<Flex direction='column'>
 				<Text fz='sm' fw={700}>
-					{member.firstName + ' ' + member.lastName}
+					{member.first_name + ' ' + member.last_name}
 				</Text>
 				<Text fz='sm'>{member.mainInstrument}</Text>
 				<Text fz='sm'>{member.email}</Text>
