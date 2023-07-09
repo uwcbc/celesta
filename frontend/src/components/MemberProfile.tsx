@@ -82,8 +82,8 @@ const MemberProfile = ({ opened, onClose, member }: MemberProfileProps) => {
 	const [instrument, setInstrument] = useState<string[]>([]) // TODO: disable "main instrument" option in secondary instrument list
 
 	useEffect(() => {
-		setFirstName(member.firstName)
-		setLastName(member.lastName)
+		setFirstName(member.first_name)
+		setLastName(member.last_name)
 		setEmail(member.email)
 		setType(member.type)
 	}, [member])
@@ -129,7 +129,7 @@ const MemberProfile = ({ opened, onClose, member }: MemberProfileProps) => {
 		<Modal
 			opened={opened}
 			onClose={onClose}
-			title={member.firstName + ' ' + member.lastName}
+			title={member.first_name + ' ' + member.last_name}
 			centered
 		>
 			<Stack spacing='xs'>
