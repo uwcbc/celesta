@@ -44,4 +44,6 @@ If you want to view a particular entry, just navigate to `http://127.0.0.1:8000/
 
 In VSCode, open a new terminal (while keeping the first terminal running!). You can open a new terminal in the top-right of the terminal window near the bottom of the screen.
 
+Note: I'm currently using the Axios package for the HTTP requests. You'll need to type in the terminal `npm i axios` to install that package.
+
 As we have done before, navigate to the frontend folder `cd frontend` and run `npm start`. Once the frontend is built (it'll take a while), you can navigate to `http://localhost:3000/` and view the beautiful results.
