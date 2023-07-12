@@ -37,7 +37,8 @@ Once the server is up and running, navigate to `http://127.0.0.1:8000/api/studen
 
 If you want to view a particular entry, just navigate to `http://127.0.0.1:8000/api/students/{id}`. For example, Heidi's entry would be `http://127.0.0.1:8000/api/students/1`
 
-![[Pasted image 20230712113738.png]]
+![image](https://github.com/uwcbc/celesta/assets/46284286/c6c2da26-67fd-474c-8b53-93c5201076e8)
+
 
 #### Running the Frontend at the same time!
 
