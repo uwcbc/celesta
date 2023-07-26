@@ -10,7 +10,10 @@ For Mac users, try this link and let me know how that goes: https://www.geeksfor
 
 Generally, they'll ask you to setup a username and password. Since we're testing locally, security doesn't matter _that_ much. I chose the username as `root` and the password as `root`.
 
-In our codebase, we've specified that our database be called _celesta_data_, so we don't need to manually set up our own database now.
+In our codebase, we've specified that our database be called _celesta_data_, but you'll still need to explicitly create your own database using MySQL. I used HeidiSQL (see below) to set up for the first time, but if you're on Mac or you don't want to use HeidiSQL, simply open up a MySQL terminal and type in:
+```
+mysql> CREATE DATABASE celesta_data;
+```
 
 #### (Optional) Installing MariaDB and HeidiSQL
 
@@ -23,7 +26,7 @@ If you're on Windows and want to perform a deep-dive into the database, you can 
 
 ### Testing Both the Backend and the Frontend
 
-If you're testing for the very first time, then you'll be starting off with an empty database. As you add to the database, they'll get saved in the MySQL server to be used again and again!
+If you're testing for the very first time, then you'll be starting off with an empty database. As you add to the database, they'll get saved in the MySQL server to be used again and again! We each have our own copy of the server on our computer, so at this point we are not sharing data.
 
 #### Starting the Django backend
 
@@ -33,7 +36,7 @@ Within VSCode, make sure your virtual environment is up and running (see the REA
 python manage.py runserver
 ```
 
-Once the server is up and running, navigate to `http://127.0.0.1:8000/api/students/`. This is where the database entries are stored. I have a few dummy data listed already (see below), but you might want to add your own using the UI in the bottom half of the screen. In the future, a complete dummy database will likely be created.
+Once the server is up and running, navigate to `http://127.0.0.1:8000/api/students/`. This is where the database entries are stored. I have a few dummy data in my own local server already (see below), but you can add your own using the UI in the bottom half of the screen. In the future, a complete dummy database will likely be created for all of us to use and test.
 
 If you want to view a particular entry, just navigate to `http://127.0.0.1:8000/api/students/{id}`. For example, Heidi's entry would be `http://127.0.0.1:8000/api/students/1`
 
@@ -46,4 +49,4 @@ In VSCode, open a new terminal (while keeping the first terminal running!). You 
 
 Note: I'm currently using the Axios package for the HTTP requests. You'll need to type in the terminal `npm i axios` to install that package.
 
-As we have done before, navigate to the frontend folder `cd frontend` and run `npm start`. Once the frontend is built (it'll take a while), you can navigate to `http://localhost:3000/` and view the beautiful results.
+As we have done before, navigate to the frontend folder `cd frontend` and run `npm start`. Once the frontend is built (it'll take a few moments), you can navigate to `http://localhost:3000/` and view the beautiful results.
