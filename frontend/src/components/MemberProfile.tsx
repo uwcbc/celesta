@@ -18,20 +18,15 @@ interface MemberProfileProps {
 	member: Member
 }
 
-const types = [
-	{ value: 'undergraduate', label: 'Undergraduate' },
-	{ value: 'graduate', label: 'Graduate' },
-	{ value: 'alumni', label: 'Alumni' },
-	{ value: 'other', label: 'Other' }
-]
+const types = ['Undergraduate', 'Graduate', 'Alumni', 'Other']
 
 const faculties = [
-	{ value: 'arts', label: 'Arts' },
-	{ value: 'engineering', label: 'Engineering' },
-	{ value: 'environment', label: 'Environment' },
-	{ value: 'health', label: 'Health' },
-	{ value: 'math', label: 'Math' },
-	{ value: 'science', label: 'Science' }
+	'Arts',
+	'Engineering',
+	'Environment',
+	'Health',
+	'Math',
+	'Science'
 ]
 
 const instruments = [
@@ -77,7 +72,7 @@ const MemberProfile = ({ opened, onClose, member }: MemberProfileProps) => {
 	const [firstName, setFirstName] = useState<string>('')
 	const [lastName, setLastName] = useState<string>('')
 	const [email, setEmail] = useState<string>('')
-	const [type, setType] = useState<string | null>()
+	const [type, setType] = useState<string | null>('')
 	const [mainInstrument, setMainInstrument] = useState<string | null>()
 	const [instrument, setInstrument] = useState<string[]>([]) // TODO: disable "main instrument" option in secondary instrument list
 
@@ -85,19 +80,21 @@ const MemberProfile = ({ opened, onClose, member }: MemberProfileProps) => {
 		setFirstName(member.first_name)
 		setLastName(member.last_name)
 		setEmail(member.email)
-		setType(member.type)
+		setType(types[member.member_type - 1])
 	}, [member])
 
 	const UWStudentProfile = () => {
-		const [faculty, setFaculty] = useState<string | null>()
+		const [faculty, setFaculty] = useState<string | null>('')
 		const [studentNumber, setStudentNumber] = useState<number>()
 		const [watIAM, setWatIAM] = useState<string>()
 
 		useEffect(() => {
-			setFaculty(member.faculty)
+			if (member.faculty !== undefined && typeof member.faculty === 'number')
+				setFaculty(faculties[member.faculty - 1])
 			setStudentNumber(member.studentNumber ?? undefined)
 			setWatIAM(member.watIAM ?? undefined)
 		}, [])
+
 		return (
 			<>
 				<Select
@@ -158,9 +155,9 @@ const MemberProfile = ({ opened, onClose, member }: MemberProfileProps) => {
 					data={types}
 					withAsterisk
 					value={type}
-					onChange={setType}
+					onChange={(value) => setType(value || null)}
 				/>
-				{(type === 'undergraduate' || type === 'graduate') && (
+				{(type === 'Undergraduate' || type === 'Graduate') && (
 					<UWStudentProfile />
 				)}
 				<Select
