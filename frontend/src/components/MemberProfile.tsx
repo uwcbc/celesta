@@ -29,36 +29,8 @@ const faculties = [
 	'Science'
 ]
 
-const instruments = [
-	{
-		value: 'Crimson',
-		label: 'Woodcock, american'
-	},
-	{
-		value: 'Green',
-		label: 'Goanna lizard'
-	},
-	{
-		value: 'Aquamarine',
-		label: 'Common wombat'
-	},
-	{
-		value: 'Indigo',
-		label: 'Ocelot'
-	},
-	{
-		value: 'Pink',
-		label: 'Banded mongoose'
-	},
-	{
-		value: 'Orange',
-		label: "Squirrel, smith's bush"
-	},
-	{
-		value: 'Yellow',
-		label: 'Lizard, collared'
-	}
-]
+// TODO: fill with proper instruments (CL-42)
+const instruments: string[] = []
 
 const sizes = [
 	{ value: 'xs', label: 'XS' },

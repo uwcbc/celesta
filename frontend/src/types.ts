@@ -6,7 +6,7 @@ export interface Member {
 	member_type: number
 	faculty?: string
 	studentNumber?: number
-	watIAM?: string | null
+	watIAM?: string
 	mainInstrument: string
 	otherInstruments?: string
 	shirt_size?: string
