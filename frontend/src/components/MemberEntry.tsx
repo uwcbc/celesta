@@ -6,7 +6,7 @@ interface MemberEntryProps {
 	image?: string
 }
 
-// TODO: link member.mainInstrument to instrument assets, and add created time
+// TODO: link member.mainInstrument to instrument assets, and add created time (CL-42)
 const MemberEntry = ({ member, image }: MemberEntryProps) => {
 	return (
 		<Group miw={300}>
