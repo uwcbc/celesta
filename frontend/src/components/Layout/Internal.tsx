@@ -7,13 +7,13 @@ const InternalLayout = () => {
 		<AppShell
 			padding='md'
 			navbar={
-				<Navbar width={{ base: 300 }} p='xs'>
+				<Navbar width={{ base: 300 }} p='xl'>
 					<p>a happy little navbar will go here when it is created ^_^</p>
 				</Navbar>
 			}
 			header={
 				<Header height={80} p='lg'>
-					<Heading />
+					<Heading isInternal={true} />
 				</Header>
 			}
 		>

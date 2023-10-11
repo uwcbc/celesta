@@ -5,7 +5,7 @@ interface ActionCardProps {
 	title: string
 	description: string
 	image: string
-  link: string
+	link: string
 }
 
 const ActionCard = ({ title, description, image, link }: ActionCardProps) => {
@@ -15,6 +15,7 @@ const ActionCard = ({ title, description, image, link }: ActionCardProps) => {
 		<Card
 			shadow='sm'
 			padding='lg'
+			radius='md'
 			withBorder
 			sx={{
 				flex: 1,

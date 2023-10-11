@@ -8,11 +8,13 @@ const ExternalLayout = () => {
 			padding='md'
 			header={
 				<Header height={80} p='lg'>
-					<Heading />
+					<Heading isInternal={false} />
 				</Header>
 			}
 		>
-			<Outlet />
+			<div style={{ margin: '24px 10%' }}>
+				<Outlet />
+			</div>
 		</AppShell>
 	)
 }
