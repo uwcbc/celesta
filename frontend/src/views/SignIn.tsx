@@ -1,7 +1,11 @@
+import { Title } from '@mantine/core'
+
 const SignIn = () => {
 	return (
 		<div>
-			<p>signup page shell</p>
+			<Title order={3} mb={10}>
+				Sign in to Rehearsal
+			</Title>
 		</div>
 	)
 }

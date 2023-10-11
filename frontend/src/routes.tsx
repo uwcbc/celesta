@@ -1,9 +1,11 @@
 import { Suspense, lazy } from 'react'
 import LoadingScreen from './components/LoadingScreen'
 import type { RouteObject } from 'react-router'
-import Layout from 'components/Layout'
 import MemberTable from 'components/MemberTable'
-import NotFound from 'components/NotFound'
+import NotFound from 'views/NotFound'
+import InternalLayout from 'components/Layout/Internal'
+import ExternalLayout from 'components/Layout/External'
+import Landing from 'views/Landing'
 
 const Loadable = (Component: any) => (props: JSX.IntrinsicAttributes) =>
 	(
@@ -17,7 +19,9 @@ const SignIn = Loadable(lazy(() => import('./views/SignIn')))
 const routes: RouteObject[] = [
 	{
 		path: '/',
+		element: <ExternalLayout />,
 		children: [
+			{ index: true, element: <Landing /> },
 			{
 				path: 'signin',
 				element: <SignIn />
@@ -26,10 +30,10 @@ const routes: RouteObject[] = [
 	},
 	{
 		path: '/',
-		element: <Layout />,
+		element: <InternalLayout />,
 		children: [
 			{
-				index: true,
+				path: 'home',
 				element: <MemberTable />
 			}
 		]

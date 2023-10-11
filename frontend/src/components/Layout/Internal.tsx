@@ -1,8 +1,8 @@
 import { AppShell, Navbar, Header } from '@mantine/core'
-import Heading from './Heading'
+import Heading from '../Heading'
 import { Outlet } from 'react-router-dom'
 
-const Layout = () => {
+const InternalLayout = () => {
 	return (
 		<AppShell
 			padding='md'
@@ -22,4 +22,4 @@ const Layout = () => {
 	)
 }
 
-export default Layout
+export default InternalLayout
