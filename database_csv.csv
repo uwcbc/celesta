@@ -1,0 +1,25 @@
+﻿id,first_name,last_name,email,member_type,faculty,watiam
+1,Sandra,Smith,sandra.smith@uwaterloo.ca,UNDERGRAD,ARTS,22477440
+2,Danny,Boy,danny.boy@uwaterloo.ca,GRADUATE,ENGINEERING,83621326
+3,John,Williams,john.williams@uwaterloo.ca,ALUMNI,ENVIRONMENT,33482924
+4,Smith,McJohns,smith.mcjohns@uwaterloo.ca,OTHER,HEALTH,99034687
+5,Ally,Zebra,ally.zebra@uwaterloo.ca,UNDERGRAD,MATHEMATICS,94081876
+6,Nurse,Joy,nurse.joy@uwaterloo.ca,GRADUATE,SCIENCE,92592349
+7,Patrick,Davis,patrick.davis@uwaterloo.ca,ALUMNI,ARTS,29581142
+8,Mana,Gere,mana.gere@uwaterloo.ca,OTHER,ENGINEERING,31897808
+9,Ray,Cruter,ray.cruter@uwaterloo.ca,UNDERGRAD,ENVIRONMENT,3395336
+10,Giva,Rase,giva.rase@uwaterloo.ca,GRADUATE,HEALTH,74975624
+11,Dr ,Boomer,dr.boomer@uwaterloo.ca,ALUMNI,MATHEMATICS,32291797
+12,Valerie,Torian,valerie.torian@uwaterloo.ca,OTHER,SCIENCE,77356045
+13,Dig,Gits,dig.gits@uwaterloo.ca,UNDERGRAD,ARTS,45683365
+14,Suzy,Shaker,suzy.shaker@uwaterloo.ca,GRADUATE,ENGINEERING,97930969
+15,Cowen,Corr,cowen.corr@uwaterloo.ca,ALUMNI,ENVIRONMENT,1494307
+16,Sina,Mattek,sina.mattek@uwaterloo.ca,OTHER,HEALTH,27733029
+17,Engie,Chan,engie.chan@uwaterloo.ca,UNDERGRAD,MATHEMATICS,5808933
+18,King,Warrior,king.warrior@uwaterloo.ca,GRADUATE,SCIENCE,83267579
+19,Sean,Paul,sean.paul@uwaterloo.ca,ALUMNI,ARTS,78629181
+20,Juan,Paul,juan.paul@uwaterloo.ca,OTHER,ENGINEERING,99553475
+21,Sara,Colic,sara.colic@uwaterloo.ca,UNDERGRAD,ENVIRONMENT,24045355
+22,Teddy,Tzu,teddy.tzu@uwaterloo.ca,GRADUATE,HEALTH,21386996
+23,Anotha,Won,anotha.won@uwaterloo.ca,ALUMNI,MATHEMATICS,50165059
+24,Vivek,Goel,vivek.goel@uwaterloo.ca,OTHER,SCIENCE,1005502
