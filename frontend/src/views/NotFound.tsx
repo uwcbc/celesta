@@ -1,5 +1,6 @@
 import { Box, Text, Title } from '@mantine/core'
 import { useNavigate } from 'react-router-dom'
+import GhostSax from '../assets/ghost_sax.png'
 
 const NotFound = () => {
 	const navigate = useNavigate()
@@ -12,10 +13,11 @@ const NotFound = () => {
 				flexDirection: 'column',
 				justifyContent: 'center',
 				alignItems: 'center',
-				gap: '24px'
+				gap: '32px'
 			}}
 		>
-			<Title>Oops! This page doesn't exist :(</Title>
+			<Title align='center'>Oops! This page doesn't exist :(</Title>
+			<img src={GhostSax} alt='Ghost playing saxophone' />
 			<Text
 				c='teal'
 				sx={{ ':hover': { textDecoration: 'underline', cursor: 'pointer' } }}
