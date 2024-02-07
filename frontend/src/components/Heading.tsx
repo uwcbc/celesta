@@ -19,11 +19,9 @@ const Heading = ({ isInternal }: { isInternal: boolean }) => {
 				</Text>
 			)}
 			{location.pathname === '/' && (
-				<Flex align='flex-end'>
-					<Button variant='filled' color='teal'>
-						Log In
-					</Button>
-				</Flex>
+				<Button variant='filled' color='teal'>
+					Log In
+				</Button>
 			)}
 		</Flex>
 	)
