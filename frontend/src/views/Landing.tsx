@@ -1,10 +1,11 @@
 import ActionCard from 'components/ActionCard'
 
+// this is mobile first
 const Landing = () => {
 	const actions = [
 		{
 			title: 'Attendance',
-			description: 'Sign in to rehearsal!',
+			description: 'Sign in to rehearsal OR join the band!',
 			image:
 				'https://media.discordapp.net/attachments/535232819853656114/1161748942204174356/Band.jpeg',
 			link: 'signin'
@@ -21,8 +22,8 @@ const Landing = () => {
 		<div
 			style={{
 				display: 'flex',
-				gap: '15%',
-				height: '70vh',
+				flexDirection: 'column',
+				gap: '36px',
 				alignItems: 'center'
 			}}
 		>

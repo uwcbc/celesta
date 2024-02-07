@@ -18,7 +18,7 @@ const ActionCard = ({ title, description, image, link }: ActionCardProps) => {
 			radius='md'
 			withBorder
 			sx={{
-				flex: 1,
+				width: '100%',
 				':hover': {
 					cursor: 'pointer'
 				}
@@ -26,7 +26,7 @@ const ActionCard = ({ title, description, image, link }: ActionCardProps) => {
 			onClick={() => navigate(link)}
 		>
 			<Card.Section>
-				<Image src={image} height={400} />
+				<Image src={image} height={225} />
 			</Card.Section>
 			<Text size='xl' fw={500} mt='lg' mb='md'>
 				{title}

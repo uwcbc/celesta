@@ -1,8 +1,10 @@
 import { Button, Flex, Text, Title } from '@mantine/core'
+import { useMediaQuery } from '@mantine/hooks'
 import { useLocation } from 'react-router-dom'
 
 const Heading = ({ isInternal }: { isInternal: boolean }) => {
 	const location = useLocation()
+	const smallWindow = useMediaQuery('(max-width: 575px)')
 
 	return (
 		<Flex
@@ -11,13 +13,17 @@ const Heading = ({ isInternal }: { isInternal: boolean }) => {
 			style={{ margin: isInternal ? '0' : '0 10%' }}
 		>
 			<Title>Celesta</Title>
-			<Text mb={5} style={{ flex: 1 }}>
-				by uw concert band club
-			</Text>
+			{!smallWindow && (
+				<Text mb={5} style={{ flex: 1 }}>
+					by uw concert band club
+				</Text>
+			)}
 			{location.pathname === '/' && (
-				<Button variant='filled' color='teal'>
-					Log In
-				</Button>
+				<Flex align='flex-end'>
+					<Button variant='filled' color='teal'>
+						Log In
+					</Button>
+				</Flex>
 			)}
 		</Flex>
 	)
